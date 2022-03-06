@@ -1,3 +1,4 @@
+// get elements by id from html template
 const firstName =  document.querySelector("#firstName");
 const lastName = document.querySelector('#lastName');
 const email = document.querySelector('#email');
@@ -6,6 +7,7 @@ const phoneNumber = document.querySelector('#phoneNumber');
 
 const submitBtn = document.querySelector('#submitBtn');
 
+// get elements by class name from html template
 const fName = document.querySelector(".fName");
 const lName = document.querySelector(".lName");
 const emailAddress = document.querySelector(".emailAddress");
@@ -13,11 +15,19 @@ const bDate = document.querySelector(".bDate");
 const pNumber = document.querySelector(".pNumber");
 
 
-
+// When submit Button is clicked, getForm() function will be executed.
+// Because line 20 is already setup, there is no need to include the getForm() function inside the button tag in HTML template
 submitBtn.addEventListener('click', getForm)
 
 
+// create a function named getForm 
 function getForm(){
+
+// when called, a confirm pop-up will appear
+// I used an if-statement
+
+// if an "ok" button is pressed, the form will be submitted
+// Data will display in the Output section
 
     if(confirm("Are you sure?")){
 
@@ -27,26 +37,29 @@ function getForm(){
         bDate.textContent = birthdate.value
         pNumber.textContent = phoneNumber.value
 
-
+    
+// Utilized few string methods and Date object 
         fName.innerHTML = fName.textContent.toUpperCase()
         lName.innerHTML = lName.textContent.toUpperCase()
         emailAddress.innerHTML = emailAddress.textContent.toLowerCase()
         bDate.innerHTML = new Date(bDate.textContent).toDateString()
-        pNumber.innerHTML = phoneNumber.textContent
-    
-    }else{
+        pNumber.innerHTML = pNumber.textContent
 
+// Used Alert pop-up to say Hi to the registered user
+// used template literal in substitute to string concatenation
+// another way to write line 50: alert("Hello, " + fName.textContent + "!")
+        alert(`Hello, ${fName.textContent}!`)
+
+    
+// if 'cancel' button is pressed, then the fields will only cleared out
+// output will be empty
+
+    }else{
         firstName.value = ""
         lastName.value = ""
         email.value = ""
         birthdate.value.Date = ""
         phoneNumber.value = ""
-
     }
 
-    firstName.value = ""
-    lastName.value = ""
-    email.value = ""
-    birthdate.value =  new Date('','','');
-    phoneNumber.value = ""
 }
