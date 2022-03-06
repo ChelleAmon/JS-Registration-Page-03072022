@@ -51,7 +51,7 @@ function getForm(){
         alert(`Hello, ${fName.textContent}!`)
 
     
-// if 'cancel' button is pressed, then the fields will only cleared out
+// if 'cancel' button is pressed, then all input fields will be cleared
 // output will be empty
 
     }else{
