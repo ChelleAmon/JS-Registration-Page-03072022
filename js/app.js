@@ -19,6 +19,8 @@ const pNumber = document.querySelector(".pNumber");
 // Because line 20 is already setup, there is no need to include the getForm() function inside the button tag in HTML template
 submitBtn.addEventListener('click', getForm)
 
+addStyle()
+
 
 // create a function named getForm 
 function getForm(){
@@ -48,7 +50,7 @@ function getForm(){
 // Used Alert pop-up to say Hi to the registered user
 // used template literal in substitute to string concatenation
 // another way to write line 50: alert("Hello, " + fName.textContent + "!")
-        alert(`Hello, ${fName.textContent}!`)
+        alert(`Hello, ${fName.textContent.toLowerCase()}!`)
 
     
 // if 'cancel' button is pressed, then all input fields will be cleared
@@ -61,5 +63,25 @@ function getForm(){
         birthdate.value.Date = ""
         phoneNumber.value = ""
     }
+}
+
+
+// Create addStyle() function to display some styling
+function addStyle(){
+
+    // get all span tags that has class Name "custom-span.font"
+    const spans = document.querySelectorAll(".custom-span-font")
+
+    // For-loop statement. I suggest not to focus too much on this function for now. 
+    // This will be discussed  by Vinson on the next lectures. 
+
+    for (let i = 0; i < spans.length; i++){
+     // Focus rather on how I style custom-span-font using JSS
+        spans[i].style.color = "green"
+        spans[i].style.fontStyle ="italic"
+        spans[i].style.fontSize = "10pt"
+    }
+
+
 
 }
